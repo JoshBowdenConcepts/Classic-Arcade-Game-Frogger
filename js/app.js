@@ -5,7 +5,7 @@ var Enemy = function(lng, lat) {
     this.x = lng;
     this.y = lat;
     this.speed = 100;
-    this.width = 80;
+    this.width = 70;
     this.height = 60;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -69,30 +69,30 @@ class Player {
 Player.prototype.handleInput = function(keyPress) {
     if (keyPress == 'left') {
         // Set the left bound to 0
-        if (player.x > 0) {
-            player.x -= player.speed;
+        if (this.x > 0) {
+            this.x -= this.speed;
         }
     }
     if (keyPress == 'up') {
-        if (player.y > -40) {
-            player.y -= player.speed
+        if (this.y > -40) {
+            this.y -= this.speed
         }
         // This is the winning condition. We want to increase the score and reset the player to the bottom of the screen.
-        if (player.y === -40) {
+        if (this.y === -40) {
             console.log('Player made it to the river');
             this.reset();
         }
     }
     if (keyPress == 'right') {
         // Set the right bound to 400
-        if (player.x < 400) {
-            player.x += player.speed;
+        if (this.x < 400) {
+            this.x += this.speed;
         }
     }
     if (keyPress == 'down') {
-        if (player.y < 400) {
-            player.y += player.speed;
-            console.log(player.y);
+        if (this.y < 400) {
+            this.y += this.speed;
+            console.log(this.y);
         }
     }
 }
